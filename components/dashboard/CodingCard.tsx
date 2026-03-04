@@ -15,8 +15,8 @@ interface Props {
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { value: number }[] }) => {
     if (active && payload && payload.length) {
         return (
-            <div style={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, padding: '6px 10px' }}>
-                <p style={{ color: '#f1f0f7', fontSize: 12, fontWeight: 600 }}>{payload[0].value}h</p>
+            <div style={{ background: '#0d1e30', border: '1px solid #22d3ee20', borderRadius: 8, padding: '6px 10px' }}>
+                <p style={{ color: '#e2f4ff', fontSize: 12, fontWeight: 600 }}>{payload[0].value}h</p>
             </div>
         );
     }
@@ -65,34 +65,34 @@ export default function CodingCard({ today, weekData, onUpdate }: Props) {
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div style={{ background: '#a78bfa20', borderRadius: 8, padding: '6px' }}>
-                        <Code2 size={15} style={{ color: '#a78bfa' }} />
+                    <div style={{ background: '#06b6d420', borderRadius: 8, padding: '6px' }}>
+                        <Code2 size={15} style={{ color: '#06b6d4' }} />
                     </div>
                     <span className="section-title">Coding / Work</span>
                 </div>
-                <span className="badge" style={{ background: '#a78bfa20', color: '#a78bfa' }}>
+                <span className="badge" style={{ background: '#06b6d420', color: '#06b6d4' }}>
                     {pct.toFixed(0)}% goal
                 </span>
             </div>
 
             <div className="flex items-end gap-2">
-                <span className="value-lg" style={{ color: today.coding >= target ? '#4ade80' : '#7c6af7' }}>
+                <span className="value-lg" style={{ color: today.coding >= target ? '#34d399' : '#06b6d4' }}>
                     {today.coding.toFixed(1)}
                 </span>
-                <span style={{ color: '#8b8a96', marginBottom: 4 }}>/ {target}h goal</span>
+                <span style={{ color: '#7a9ab5', marginBottom: 4 }}>/ {target}h goal</span>
             </div>
 
             {/* Timer */}
             <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 10, padding: '10px 12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontFamily: 'monospace', fontSize: 20, fontWeight: 700, color: running ? '#a78bfa' : '#f1f0f7', letterSpacing: 1 }}
+                    <span style={{ fontFamily: 'monospace', fontSize: 20, fontWeight: 700, color: running ? '#22d3ee' : '#e2f4ff', letterSpacing: 1 }}
                         className={running ? 'timer-active' : ''}>
                         {formatTime(elapsed)}
                     </span>
                     <div style={{ display: 'flex', gap: 6 }}>
                         <button
                             onClick={() => setRunning(!running)}
-                            style={{ background: running ? '#a78bfa20' : '#a78bfa', borderRadius: 7, padding: '5px 10px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, color: running ? '#a78bfa' : 'white', fontSize: 12 }}>
+                            style={{ background: running ? '#06b6d420' : '#06b6d4', borderRadius: 7, padding: '5px 10px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, color: running ? '#22d3ee' : 'white', fontSize: 12 }}>
                             {running ? <Pause size={12} /> : <Play size={12} />}
                             {running ? 'Pause' : 'Start'}
                         </button>
@@ -122,11 +122,11 @@ export default function CodingCard({ today, weekData, onUpdate }: Props) {
             <div style={{ height: 65 }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData} barSize={10}>
-                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
+                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
                         <Tooltip content={<CustomTooltip />} cursor={false} />
                         <Bar dataKey="hours" radius={[3, 3, 0, 0]}>
                             {chartData.map((entry, index) => (
-                                <Cell key={index} fill={index === 6 ? '#a78bfa' : '#a78bfa40'} />
+                                <Cell key={index} fill={index === 6 ? '#06b6d4' : '#06b6d430'} />
                             ))}
                         </Bar>
                     </BarChart>

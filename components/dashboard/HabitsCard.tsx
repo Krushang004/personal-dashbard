@@ -48,7 +48,7 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
             {/* Progress */}
             <div className="progress-bar">
                 <div className="progress-fill"
-                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(90deg, #f472b6, #a78bfa)' }} />
+                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(90deg, #e879f9, #06b6d4)' }} />
             </div>
 
             {/* Habit list */}
@@ -67,8 +67,8 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
                             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                                 {checked
                                     ? <CheckSquare size={15} style={{ color: '#f472b6' }} />
-                                    : <Square size={15} style={{ color: '#4b4a56' }} />}
-                                <span style={{ fontSize: 13, color: checked ? '#f1f0f7' : '#8b8a96', fontWeight: checked ? 500 : 400 }}>
+                                    : <Square size={15} style={{ color: '#3d5a70' }} />}
+                                <span style={{ fontSize: 13, color: checked ? '#e2f4ff' : '#7a9ab5', fontWeight: checked ? 500 : 400 }}>
                                     {habit}
                                 </span>
                             </div>

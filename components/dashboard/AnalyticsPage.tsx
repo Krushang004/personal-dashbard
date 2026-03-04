@@ -34,20 +34,20 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
     return (
         <div style={{
             position: 'fixed', inset: 0, zIndex: 100,
-            background: 'rgba(10,10,15,0.95)', backdropFilter: 'blur(20px)',
+            background: 'rgba(5,13,26,0.97)', backdropFilter: 'blur(20px)',
             overflowY: 'auto', padding: '40px 32px'
         }}>
             <div style={{ maxWidth: 1000, margin: '0 auto' }}>
                 {/* Header */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
                     <div>
-                        <h2 style={{ fontSize: 26, fontWeight: 700, color: '#f1f0f7', letterSpacing: '-0.5px' }}>
+                        <h2 style={{ fontSize: 26, fontWeight: 700, color: '#e2f4ff', letterSpacing: '-0.5px' }}>
                             📊 Analytics
                         </h2>
-                        <p style={{ color: '#8b8a96', fontSize: 14, marginTop: 4 }}>Last 14 days overview</p>
+                        <p style={{ color: '#7a9ab5', fontSize: 14, marginTop: 4 }}>Last 14 days overview</p>
                     </div>
                     <button onClick={onClose}
-                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '8px 16px', cursor: 'pointer', color: '#f1f0f7', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13 }}>
+                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '8px 16px', cursor: 'pointer', color: '#e2f4ff', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13 }}>
                         <X size={14} /> Close
                     </button>
                 </div>
@@ -60,15 +60,15 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             <AreaChart data={last14}>
                                 <defs>
                                     <linearGradient id="scoreGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#7c6af7" stopOpacity={0.4} />
-                                        <stop offset="95%" stopColor="#7c6af7" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#06b6d4" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, fontSize: 12 }} />
-                                <Area type="monotone" dataKey="score" stroke="#7c6af7" strokeWidth={2} fill="url(#scoreGrad)" name="Score" />
+                                <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #22d3ee20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
+                                <Area type="monotone" dataKey="score" stroke="#06b6d4" strokeWidth={2} fill="url(#scoreGrad)" name="Score" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -84,7 +84,7 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                                 <Tooltip contentStyle={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, fontSize: 12 }} />
                                 <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: '#8b8a96' }} />
                                 <Bar dataKey="sleep" fill="#60a5fa" radius={[3, 3, 0, 0]} name="Sleep" />
-                                <Bar dataKey="study" fill="#4ade80" radius={[3, 3, 0, 0]} name="Study" />
+                                <Bar dataKey="study" fill="#34d399" radius={[3, 3, 0, 0]} name="Study" />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -96,15 +96,15 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             <AreaChart data={last14}>
                                 <defs>
                                     <linearGradient id="codeGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#a78bfa" stopOpacity={0.4} />
-                                        <stop offset="95%" stopColor="#a78bfa" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#06b6d4" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <YAxis tick={{ fontSize: 9, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, fontSize: 12 }} />
-                                <Area type="monotone" dataKey="coding" stroke="#a78bfa" strokeWidth={2} fill="url(#codeGrad)" name="Coding (h)" />
+                                <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <YAxis tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #22d3ee20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
+                                <Area type="monotone" dataKey="coding" stroke="#06b6d4" strokeWidth={2} fill="url(#codeGrad)" name="Coding (h)" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -116,8 +116,8 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             <AreaChart data={last14}>
                                 <defs>
                                     <linearGradient id="earnGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#4ade80" stopOpacity={0.4} />
-                                        <stop offset="95%" stopColor="#4ade80" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#34d399" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#34d399" stopOpacity={0} />
                                     </linearGradient>
                                     <linearGradient id="spendGrad" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%" stopColor="#f87171" stopOpacity={0.4} />
@@ -125,11 +125,11 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                                <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <YAxis tick={{ fontSize: 9, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, fontSize: 12 }} />
-                                <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: '#8b8a96' }} />
-                                <Area type="monotone" dataKey="moneyEarned" stroke="#4ade80" strokeWidth={2} fill="url(#earnGrad)" name="Earned" />
+                                <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <YAxis tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
+                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #22d3ee20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
+                                <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: '#7a9ab5' }} />
+                                <Area type="monotone" dataKey="moneyEarned" stroke="#34d399" strokeWidth={2} fill="url(#earnGrad)" name="Earned" />
                                 <Area type="monotone" dataKey="moneySpent" stroke="#f87171" strokeWidth={2} fill="url(#spendGrad)" name="Spent" />
                             </AreaChart>
                         </ResponsiveContainer>
@@ -142,7 +142,7 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             {last14.map((d, i) => (
                                 <div key={i} style={{ textAlign: 'center', minWidth: 40 }}>
                                     <div style={{ fontSize: 22, lineHeight: 1.4 }}>{d.moodEmoji || '·'}</div>
-                                    <div style={{ fontSize: 9, color: '#4b4a56', marginTop: 2 }}>{d.day.split(' ')[1]}</div>
+                                    <div style={{ fontSize: 9, color: '#3d5a70', marginTop: 2 }}>{d.day.split(' ')[1]}</div>
                                 </div>
                             ))}
                         </div>

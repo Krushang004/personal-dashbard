@@ -49,12 +49,12 @@ export default function NotesCard({ today, onUpdate }: Props) {
                     <span className="section-title">Daily Notes</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ fontSize: 10, color: '#4b4a56' }}>{wordCount} words</span>
+                    <span style={{ fontSize: 10, color: '#3d5a70' }}>{wordCount} words</span>
                     <button onClick={handleSave}
                         style={{
                             display: 'flex', alignItems: 'center', gap: 4, padding: '4px 9px', borderRadius: 7, cursor: 'pointer', fontSize: 11,
-                            background: saved ? 'rgba(255,255,255,0.04)' : '#7c6af720', border: `1px solid ${saved ? 'rgba(255,255,255,0.06)' : '#7c6af740'}`,
-                            color: saved ? '#4b4a56' : '#7c6af7', transition: 'all 0.2s'
+                            background: saved ? 'rgba(255,255,255,0.04)' : '#06b6d418', border: `1px solid ${saved ? 'rgba(255,255,255,0.06)' : '#06b6d435'}`,
+                            color: saved ? '#3d5a70' : '#06b6d4', transition: 'all 0.2s'
                         }}>
                         <Save size={10} />
                         {saved ? 'Saved' : 'Save'}
@@ -71,14 +71,14 @@ Use this as your daily brain dump. What did you learn? What will you do tomorrow
                 style={{
                     width: '100%', resize: 'none', minHeight: 180,
                     background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
-                    borderRadius: 10, padding: '12px', color: '#f1f0f7', fontSize: 13, lineHeight: 1.7,
+                    borderRadius: 10, padding: '12px', color: '#e2f4ff', fontSize: 13, lineHeight: 1.7,
                     fontFamily: 'Inter, system-ui, sans-serif', outline: 'none', transition: 'border-color 0.2s'
                 }}
-                onFocus={e => { e.target.style.borderColor = '#7c6af7'; e.target.style.background = '#7c6af708'; }}
+                onFocus={e => { e.target.style.borderColor = '#06b6d4'; e.target.style.background = '#06b6d408'; }}
                 onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.06)'; e.target.style.background = 'rgba(255,255,255,0.02)'; }}
             />
 
-            <div style={{ fontSize: 11, color: '#4b4a56' }}>
+            <div style={{ fontSize: 11, color: '#3d5a70' }}>
                 💡 Tip: Auto-saves after 1.5s of inactivity
             </div>
         </div>
