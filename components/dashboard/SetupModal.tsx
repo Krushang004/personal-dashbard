@@ -25,20 +25,20 @@ export default function SetupModal({ onComplete }: Props) {
                 style={{ border: '1px solid rgba(168,85,247,0.3)' }}>
 
                 <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full mb-6"
-                    style={{ background: 'rgba(168,85,247,0.15)', color: '#c084fc' }}>
+                    style={{ background: 'linear-gradient(135deg, #1C3D8C, #0F6CBD, #1F9D8B)', color: '#E6EDF3' }}>
                     <Sparkles size={32} />
                 </div>
 
                 <h2 className="text-3xl font-bold mb-3" style={{ color: '#f3e8ff', letterSpacing: '-0.5px' }}>
                     Welcome Aboard
                 </h2>
-                <p className="mb-8 font-medium" style={{ color: '#a78bfa', fontSize: 15 }}>
+                <p className="mb-8 font-medium" style={{ color: '#94A3B8', fontSize: 15 }}>
                     Let's set up your new Deep Space dashboard. What should I call you?
                 </p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={20} style={{ color: '#a855f7' }} />
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={20} style={{ color: '#3BA4F7' }} />
                         <input
                             autoFocus
                             type="text"

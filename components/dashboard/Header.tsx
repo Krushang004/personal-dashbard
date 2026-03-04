@@ -38,8 +38,8 @@ export default function Header({ today, userName, onRefresh }: Props) {
             {/* Left: Greeting */}
             <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <h1 style={{ fontSize: 22, fontWeight: 700, color: '#e2f4ff', letterSpacing: '-0.3px' }}>
-                        {getGreeting()}, <span style={{ color: 'var(--color-accent, #a855f7)' }}>{userName}</span> 👋
+                    <h1 style={{ fontSize: 22, fontWeight: 700, color: '#E6EDF3', letterSpacing: '-0.3px' }}>
+                        {getGreeting()}, <span style={{ color: 'var(--color-accent, #3BA4F7)' }}>{userName}</span> 👋
                     </h1>
                     {moodEntry && (
                         <span title={`Mood: ${moodEntry.label}`} style={{ fontSize: 18, cursor: 'default' }}>{moodEntry.emoji}</span>
@@ -65,20 +65,27 @@ export default function Header({ today, userName, onRefresh }: Props) {
             <div className="flex items-center gap-4 sm:gap-6 w-full md:w-auto order-2 md:order-3 justify-between md:justify-end">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <svg width={60} height={60} viewBox="0 0 60 60" style={{ transform: 'rotate(-90deg)' }}>
+                        <defs>
+                            <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#1C3D8C" />
+                                <stop offset="50%" stopColor="#0F6CBD" />
+                                <stop offset="100%" stopColor="#1F9D8B" />
+                            </linearGradient>
+                        </defs>
                         <circle cx={30} cy={30} r={radius} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={4} />
-                        <circle cx={30} cy={30} r={radius} fill="none" stroke={scoreColor} strokeWidth={4}
+                        <circle cx={30} cy={30} r={radius} fill="none" stroke="url(#heroGradient)" strokeWidth={4}
                             strokeDasharray={`${dash} ${circ}`} strokeLinecap="round"
                             style={{ transition: 'stroke-dasharray 0.5s cubic-bezier(0.4,0,0.2,1)' }} />
                     </svg>
                     <div>
-                        <div style={{ fontSize: 22, fontWeight: 800, color: scoreColor, lineHeight: 1, letterSpacing: '-0.5px' }}>{score}</div>
-                        <div style={{ fontSize: 10, color: '#8b8a96', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{scoreLabel}</div>
+                        <div style={{ fontSize: 22, fontWeight: 800, color: '#E6EDF3', lineHeight: 1, letterSpacing: '-0.5px' }}>{score}</div>
+                        <div style={{ fontSize: 10, color: '#64748B', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{scoreLabel}</div>
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: 'var(--color-accent-dim)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: 8 }}>
-                    <Zap size={12} style={{ color: 'var(--color-accent, #a855f7)' }} />
-                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-accent, #a855f7)' }}>Productivity Score</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: 'var(--color-accent-dim)', border: '1px solid rgba(59,164,247,0.3)', borderRadius: 8 }}>
+                    <Zap size={12} style={{ color: 'var(--color-accent, #3BA4F7)' }} />
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-accent, #3BA4F7)' }}>Productivity Score</span>
                 </div>
             </div>
         </div>

@@ -1,39 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* Backgrounds — deep space purple */
-  --color-bg-primary: #080414;
-  --color-bg-secondary: #0f0822;
-  --color-bg-card: #150c2f;
-  --color-bg-card-hover: #1c113c;
+  /* Backgrounds — modern dark health dashboard */
+  --color-bg-primary: #0B0F14;
+  --color-bg-secondary: #0E1319;
+  --color-bg-card: #141A21;
+  --color-bg-card-hover: #1A222B;
 
   /* Borders */
-  --color-border: #ffffff0d;
-  --color-border-active: #a855f730;
+  --color-border: #222A35;
+  --color-border-active: #3BA4F780;
 
-  /* Accent — vibrant amethyst */
-  --color-accent: #a855f7;
-  --color-accent-light: #c084fc;
-  --color-accent-dim: #a855f718;
+  /* Accent — Primary (Blue) */
+  --color-accent: #3BA4F7;
+  --color-accent-light: #60B7F8;
+  --color-accent-dim: #3BA4F71A;
+
+  /* Accent — Secondary (Teal) */
+  --color-accent-secondary: #2DD4BF;
+  --color-accent-sec-dim: #2DD4BF1A;
 
   /* Semantic colors */
-  --color-green: #34d399;
-  --color-green-dim: #34d39918;
-  --color-orange: #f97316;
-  --color-orange-dim: #f9731618;
-  --color-blue: #60a5fa;
-  --color-blue-dim: #60a5fa18;
-  --color-pink: #e879f9;
-  --color-pink-dim: #e879f918;
-  --color-yellow: #fbbf24;
-  --color-yellow-dim: #fbbf2418;
-  --color-red: #f87171;
-  --color-red-dim: #f8717118;
+  --color-green: #4ADE80;
+  --color-green-dim: #4ADE801A;
+  --color-orange: #fb923c;
+  --color-orange-dim: #fb923c18;
+  --color-blue: #3BA4F7;
+  --color-blue-dim: #3BA4F71A;
+  --color-pink: #f472b6;
+  --color-pink-dim: #f472b618;
+  --color-yellow: #FACC15;
+  --color-yellow-dim: #FACC151A;
+  --color-red: #FB7185;
+  --color-red-dim: #FB71851A;
 
   /* Text */
-  --color-text-primary: #f3e8ff;
-  --color-text-secondary: #a78bfa;
-  --color-text-muted: #7c3aed;
+  --color-text-primary: #E6EDF3;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -73,12 +77,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2a2a36;
+    background: #222A35;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #38384a;
+    background: #334155;
   }
 
   input,
@@ -102,14 +106,16 @@
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card:hover {
     border-color: var(--color-border-active);
     background: var(--color-bg-card-hover);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(168, 85, 247, 0.2), 0 0 40px rgba(168, 85, 247, 0.08);
-    transform: translateY(-1px);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 164, 247, 0.1);
+    transform: translateY(-2px);
+    filter: brightness(1.02);
   }
 
   .input-field {
@@ -125,7 +131,8 @@
 
   .input-field:focus {
     border-color: var(--color-accent);
-    background: rgba(168, 85, 247, 0.08);
+    background: rgba(59, 164, 247, 0.08);
+    /* 3BA4F7 */
   }
 
   .btn-primary {
@@ -200,7 +207,8 @@
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
+    box-shadow: 0 0 20px rgba(59, 164, 247, 0.35);
+    /* 3BA4F7 glow */
   }
 
   .badge {
@@ -223,7 +231,8 @@
 }
 
 .recharts-text {
-  fill: #a78bfa !important;
+  fill: #94A3B8 !important;
+  /* Text Secondary */
   font-size: 11px !important;
   font-family: var(--font-sans) !important;
 }
@@ -277,9 +286,9 @@
 
 /* Scrollbar track tint */
 ::-webkit-scrollbar-thumb {
-  background: #1c113c;
+  background: #222A35;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2e1c66;
+  background: #334155;
 }

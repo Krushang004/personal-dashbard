@@ -22,7 +22,7 @@ const FIELDS: StatField[] = [
     { key: 'ytViews', label: 'YT Views', icon: <Youtube size={13} />, color: '#f87171', placeholder: '0', suffix: 'views' },
     { key: 'ytSubscribers', label: 'YT Subs', icon: <Users size={13} />, color: '#fb923c', placeholder: '0', suffix: 'subs' },
     { key: 'igViews', label: 'IG Views', icon: <Instagram size={13} />, color: '#f472b6', placeholder: '0', suffix: 'views' },
-    { key: 'followers', label: 'IG Followers', icon: <TrendingUp size={13} />, color: '#a855f7', placeholder: '0', suffix: 'followers' },
+    { key: 'followers', label: 'IG Followers', icon: <TrendingUp size={13} />, color: '#3BA4F7', placeholder: '0', suffix: 'followers' },
 ];
 
 export default function SocialCard({ today, onUpdate }: Props) {
