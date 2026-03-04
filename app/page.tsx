@@ -76,11 +76,8 @@ export default function DashboardPage() {
             <Header today={todayData} />
 
             {/* Date navigation bar */}
-            <div style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                padding: '12px 32px', borderBottom: '1px solid rgba(255,255,255,0.04)'
-            }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-8 py-3 relative z-10" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0" style={{ scrollbarWidth: 'none' }}>
                     <button onClick={prevDay}
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '5px 8px', cursor: 'pointer', color: '#8b8a96', display: 'flex', alignItems: 'center' }}>
                         <ChevronLeft size={15} />
@@ -102,7 +99,7 @@ export default function DashboardPage() {
                     )}
                 </div>
 
-                <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <div className="flex gap-2 sm:gap-4 items-center w-full sm:w-auto justify-between sm:justify-end">
                     <span style={{ fontSize: 11, color: '#4b4a56' }}>
                         <kbd style={{ background: '#1c1c26', border: '1px solid #ffffff10', borderRadius: 4, padding: '1px 5px', marginRight: 4 }}>T</kbd>today
                         &nbsp;&nbsp;
@@ -118,12 +115,8 @@ export default function DashboardPage() {
             </div>
 
             {/* Main grid */}
-            <div style={{ padding: '24px 32px', maxWidth: 1400, margin: '0 auto' }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: 18,
-                }}>
+            <div className="p-4 sm:p-6 md:p-8 max-w-[1400px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
                     {/* Row 1: Sleep, Study, Coding */}
                     <SleepCard today={todayData} weekData={weekData} onUpdate={updateDay} />
                     <StudyCard today={todayData} weekData={weekData} onUpdate={updateDay} />
@@ -135,13 +128,13 @@ export default function DashboardPage() {
                     <MoodCard today={todayData} weekData={weekData} onUpdate={updateDay} />
 
                     {/* Row 3: Money (wide), Social */}
-                    <div style={{ gridColumn: 'span 2' }}>
+                    <div className="md:col-span-2 xl:col-span-2">
                         <MoneyCard today={todayData} weekData={weekData} onUpdate={updateDay} />
                     </div>
                     <SocialCard today={todayData} onUpdate={updateDay} />
 
                     {/* Row 4: Notes (full width) */}
-                    <div style={{ gridColumn: '1 / -1' }}>
+                    <div className="col-span-1 md:col-span-2 xl:col-span-3">
                         <NotesCard today={todayData} onUpdate={updateDay} />
                     </div>
                 </div>

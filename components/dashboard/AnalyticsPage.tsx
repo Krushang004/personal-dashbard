@@ -32,14 +32,13 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
     });
 
     return (
-        <div style={{
-            position: 'fixed', inset: 0, zIndex: 100,
-            background: 'rgba(5,13,26,0.97)', backdropFilter: 'blur(20px)',
-            overflowY: 'auto', padding: '40px 32px'
-        }}>
-            <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+        <div className="fixed inset-0 z-[100] overflow-y-auto px-4 py-8 sm:px-8 sm:py-10"
+            style={{
+                background: 'rgba(5,13,26,0.97)', backdropFilter: 'blur(20px)',
+            }}>
+            <div className="max-w-[1000px] mx-auto w-full">
                 {/* Header */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                     <div>
                         <h2 style={{ fontSize: 26, fontWeight: 700, color: '#e2f4ff', letterSpacing: '-0.5px' }}>
                             📊 Analytics
@@ -52,9 +51,9 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                     </button>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     {/* Productivity Score */}
-                    <div className="card p-5" style={{ gridColumn: '1 / -1' }}>
+                    <div className="card p-4 sm:p-5 lg:col-span-2">
                         <div className="section-title" style={{ marginBottom: 16 }}>Productivity Score — 14 Days</div>
                         <ResponsiveContainer width="100%" height={180}>
                             <AreaChart data={last14}>

@@ -52,7 +52,7 @@ export default function SocialCard({ today, onUpdate }: Props) {
                 <span className="section-title">Social Metrics</span>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {FIELDS.map(field => {
                     const current = today[field.key] as number || 0;
                     return (

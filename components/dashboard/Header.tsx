@@ -29,12 +29,11 @@ export default function Header({ today, onRefresh }: Props) {
     const dash = (score / 100) * circ;
 
     return (
-        <div style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            padding: '20px 32px', borderBottom: '1px solid rgba(34,211,238,0.08)',
-            background: 'rgba(5,13,26,0.85)', backdropFilter: 'blur(20px)',
-            position: 'sticky', top: 0, zIndex: 10
-        }}>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4 md:px-8 py-5 sticky top-0 z-20"
+            style={{
+                borderBottom: '1px solid rgba(34,211,238,0.08)',
+                background: 'rgba(5,13,26,0.85)', backdropFilter: 'blur(20px)'
+            }}>
             {/* Left: Greeting */}
             <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -54,7 +53,7 @@ export default function Header({ today, onRefresh }: Props) {
             </div>
 
             {/* Center: quick stats */}
-            <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
+            <div className="flex flex-wrap gap-4 sm:gap-8 items-center justify-between sm:justify-start w-full md:w-auto order-3 md:order-2">
                 <Stat label="Sleep" val={`${today.sleep}h`} color="#60a5fa" />
                 <Stat label="Study" val={`${today.study}h`} color="#34d399" />
                 <Stat label="Code" val={`${today.coding.toFixed(1)}h`} color="#06b6d4" />
@@ -62,7 +61,7 @@ export default function Header({ today, onRefresh }: Props) {
             </div>
 
             {/* Right: Score ring */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+            <div className="flex items-center gap-4 sm:gap-6 w-full md:w-auto order-2 md:order-3 justify-between md:justify-end">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <svg width={60} height={60} viewBox="0 0 60 60" style={{ transform: 'rotate(-90deg)' }}>
                         <circle cx={30} cy={30} r={radius} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={4} />
