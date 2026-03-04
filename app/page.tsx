@@ -4,11 +4,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { format } from 'date-fns';
 import { BarChart2, ChevronLeft, ChevronRight } from 'lucide-react';
 
+import { getTodayKey, getWeekKeys } from '@/utils/dateUtils';
+import { useUserData } from '@/hooks/useUserData';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { DayData, emptyDay } from '@/utils/types';
-import { getTodayKey, getWeekKeys } from '@/utils/dateUtils';
 
 import Header from '@/components/dashboard/Header';
+import SetupModal from '@/components/dashboard/SetupModal';
 import SleepCard from '@/components/dashboard/SleepCard';
 import StudyCard from '@/components/dashboard/StudyCard';
 import CodingCard from '@/components/dashboard/CodingCard';
@@ -21,6 +23,7 @@ import NotesCard from '@/components/dashboard/NotesCard';
 import AnalyticsPage from '@/components/dashboard/AnalyticsPage';
 
 export default function DashboardPage() {
+    const { userName, setUserName, isLoaded, isFirstTime } = useUserData();
     const [allData, setAllData] = useLocalStorage<Record<string, DayData>>('life-dashboard-v1', {});
     const [viewingDate, setViewingDate] = useState(getTodayKey());
     const [showAnalytics, setShowAnalytics] = useState(false);
@@ -69,11 +72,15 @@ export default function DashboardPage() {
         return () => window.removeEventListener('keydown', onKey);
     }, [viewingDate, isToday]);
 
-    if (!mounted) return null;
+    if (!mounted || !isLoaded) return null;
 
     return (
-        <div style={{ minHeight: '100vh', background: '#0a0a0f' }}>
-            <Header today={todayData} />
+        <div style={{ minHeight: '100vh', background: 'var(--color-bg-primary, #080414)' }}>
+
+            {/* First-time Setup Modal */}
+            {isFirstTime && <SetupModal onComplete={setUserName} />}
+
+            <Header today={todayData} userName={userName || 'Guest'} />
 
             {/* Date navigation bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-8 py-3 relative z-10" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
@@ -117,14 +124,14 @@ export default function DashboardPage() {
             {/* Main grid */}
             <div className="p-4 sm:p-6 md:p-8 max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
-                    {/* Row 1: Sleep, Study, Coding */}
+                    {/* Row 1: Sleep, Habits, Coding */}
                     <SleepCard today={todayData} weekData={weekData} onUpdate={updateDay} />
-                    <StudyCard today={todayData} weekData={weekData} onUpdate={updateDay} />
+                    <HabitsCard today={todayData} weekData={weekData} onUpdate={updateDay} />
                     <CodingCard today={todayData} weekData={weekData} onUpdate={updateDay} />
 
-                    {/* Row 2: Gym, Habits, Mood */}
+                    {/* Row 2: Gym, Study, Mood */}
                     <GymCard today={todayData} weekData={weekData} onUpdate={updateDay} />
-                    <HabitsCard today={todayData} weekData={weekData} onUpdate={updateDay} />
+                    <StudyCard today={todayData} weekData={weekData} onUpdate={updateDay} />
                     <MoodCard today={todayData} weekData={weekData} onUpdate={updateDay} />
 
                     {/* Row 3: Money (wide), Social */}

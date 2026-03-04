@@ -8,10 +8,11 @@ import { getGreeting } from '@/utils/dateUtils';
 
 interface Props {
     today: DayData;
+    userName: string;
     onRefresh?: () => void;
 }
 
-export default function Header({ today, onRefresh }: Props) {
+export default function Header({ today, userName, onRefresh }: Props) {
     const [now, setNow] = useState(new Date());
     const score = calcProductivityScore(today);
     const scoreColor = getScoreColor(score);
@@ -38,7 +39,7 @@ export default function Header({ today, onRefresh }: Props) {
             <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <h1 style={{ fontSize: 22, fontWeight: 700, color: '#e2f4ff', letterSpacing: '-0.3px' }}>
-                        {getGreeting()}, <span style={{ color: '#22d3ee' }}>Krushang</span> 👋
+                        {getGreeting()}, <span style={{ color: 'var(--color-accent, #a855f7)' }}>{userName}</span> 👋
                     </h1>
                     {moodEntry && (
                         <span title={`Mood: ${moodEntry.label}`} style={{ fontSize: 18, cursor: 'default' }}>{moodEntry.emoji}</span>
@@ -46,7 +47,7 @@ export default function Header({ today, onRefresh }: Props) {
                 </div>
                 <div style={{ color: '#7a9ab5', fontSize: 13, marginTop: 3, fontWeight: 400 }}>
                     {format(now, 'EEEE, MMMM d, yyyy')} &nbsp;·&nbsp;
-                    <span style={{ fontFamily: 'monospace', color: '#22d3ee', fontWeight: 600 }}>
+                    <span style={{ fontFamily: 'monospace', color: 'var(--color-accent-light, #c084fc)', fontWeight: 600 }}>
                         {format(now, 'HH:mm:ss')}
                     </span>
                 </div>
@@ -75,9 +76,9 @@ export default function Header({ today, onRefresh }: Props) {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: '#06b6d415', border: '1px solid #06b6d430', borderRadius: 8 }}>
-                    <Zap size={12} style={{ color: '#06b6d4' }} />
-                    <span style={{ fontSize: 12, fontWeight: 600, color: '#06b6d4' }}>Productivity Score</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: 'var(--color-accent-dim)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: 8 }}>
+                    <Zap size={12} style={{ color: 'var(--color-accent, #a855f7)' }} />
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-accent, #a855f7)' }}>Productivity Score</span>
                 </div>
             </div>
         </div>

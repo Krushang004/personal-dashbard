@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Backgrounds — deep ocean navy */
-  --color-bg-primary: #050d1a;
-  --color-bg-secondary: #091524;
-  --color-bg-card: #0d1e30;
-  --color-bg-card-hover: #112740;
+  /* Backgrounds — deep space purple */
+  --color-bg-primary: #080414;
+  --color-bg-secondary: #0f0822;
+  --color-bg-card: #150c2f;
+  --color-bg-card-hover: #1c113c;
 
   /* Borders */
   --color-border: #ffffff0d;
-  --color-border-active: #22d3ee30;
+  --color-border-active: #a855f730;
 
-  /* Accent — electric cyan */
-  --color-accent: #06b6d4;
-  --color-accent-light: #22d3ee;
-  --color-accent-dim: #06b6d418;
+  /* Accent — vibrant amethyst */
+  --color-accent: #a855f7;
+  --color-accent-light: #c084fc;
+  --color-accent-dim: #a855f718;
 
   /* Semantic colors */
   --color-green: #34d399;
@@ -31,9 +31,9 @@
   --color-red-dim: #f8717118;
 
   /* Text */
-  --color-text-primary: #e2f4ff;
-  --color-text-secondary: #7a9ab5;
-  --color-text-muted: #3d5a70;
+  --color-text-primary: #f3e8ff;
+  --color-text-secondary: #a78bfa;
+  --color-text-muted: #7c3aed;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -108,7 +108,7 @@
   .card:hover {
     border-color: var(--color-border-active);
     background: var(--color-bg-card-hover);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(6, 182, 212, 0.15), 0 0 40px rgba(6, 182, 212, 0.04);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(168, 85, 247, 0.2), 0 0 40px rgba(168, 85, 247, 0.08);
     transform: translateY(-1px);
   }
 
@@ -125,7 +125,7 @@
 
   .input-field:focus {
     border-color: var(--color-accent);
-    background: rgba(6, 182, 212, 0.06);
+    background: rgba(168, 85, 247, 0.08);
   }
 
   .btn-primary {
@@ -200,7 +200,7 @@
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
   }
 
   .badge {
@@ -223,7 +223,7 @@
 }
 
 .recharts-text {
-  fill: #3d5a70 !important;
+  fill: #a78bfa !important;
   font-size: 11px !important;
   font-family: var(--font-sans) !important;
 }
@@ -277,9 +277,9 @@
 
 /* Scrollbar track tint */
 ::-webkit-scrollbar-thumb {
-  background: #112740;
+  background: #1c113c;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1a3a55;
+  background: #2e1c66;
 }
