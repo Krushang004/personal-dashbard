@@ -59,15 +59,15 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             <AreaChart data={last14}>
                                 <defs>
                                     <linearGradient id="scoreGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#a855f7" stopOpacity={0.4} />
-                                        <stop offset="95%" stopColor="#a855f7" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#3BA4F7" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#3BA4F7" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                                 <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
                                 <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #c084fc20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
-                                <Area type="monotone" dataKey="score" stroke="#a855f7" strokeWidth={2} fill="url(#scoreGrad)" name="Score" />
+                                <Tooltip contentStyle={{ background: 'var(--color-bg-card)', border: '1px solid #3BA4F720', borderRadius: 8, fontSize: 12, color: '#E6EDF3' }} />
+                                <Area type="monotone" dataKey="score" stroke="#3BA4F7" strokeWidth={2} fill="url(#scoreGrad)" name="Score" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -95,15 +95,15 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                             <AreaChart data={last14}>
                                 <defs>
                                     <linearGradient id="codeGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#a855f7" stopOpacity={0.4} />
-                                        <stop offset="95%" stopColor="#a855f7" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#2DD4BF" stopOpacity={0.4} />
+                                        <stop offset="95%" stopColor="#2DD4BF" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                                 <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
                                 <YAxis tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #c084fc20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
-                                <Area type="monotone" dataKey="coding" stroke="#a855f7" strokeWidth={2} fill="url(#codeGrad)" name="Coding (h)" />
+                                <Tooltip contentStyle={{ background: 'var(--color-bg-card)', border: '1px solid #2DD4BF20', borderRadius: 8, fontSize: 12, color: '#E6EDF3' }} />
+                                <Area type="monotone" dataKey="coding" stroke="#2DD4BF" strokeWidth={2} fill="url(#codeGrad)" name="Coding (h)" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -126,7 +126,7 @@ export default function AnalyticsPage({ allData, onClose }: Props) {
                                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                                 <XAxis dataKey="day" tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
                                 <YAxis tick={{ fontSize: 9, fill: '#3d5a70' }} axisLine={false} tickLine={false} />
-                                <Tooltip contentStyle={{ background: '#0d1e30', border: '1px solid #c084fc20', borderRadius: 8, fontSize: 12, color: '#e2f4ff' }} />
+                                <Tooltip contentStyle={{ background: 'var(--color-bg-card)', border: '1px solid #3BA4F720', borderRadius: 8, fontSize: 12, color: '#E6EDF3' }} />
                                 <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, color: '#7a9ab5' }} />
                                 <Area type="monotone" dataKey="moneyEarned" stroke="#34d399" strokeWidth={2} fill="url(#earnGrad)" name="Earned" />
                                 <Area type="monotone" dataKey="moneySpent" stroke="#f87171" strokeWidth={2} fill="url(#spendGrad)" name="Spent" />
