@@ -48,7 +48,7 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
             {/* Progress */}
             <div className="progress-bar">
                 <div className="progress-fill"
-                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(135deg, #1C3D8C, #0F6CBD, #2DD4BF)' }} />
+                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(90deg, #e879f9, #a855f7)' }} />
             </div>
 
             {/* Habit list */}

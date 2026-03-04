@@ -53,8 +53,8 @@ export default function NotesCard({ today, onUpdate }: Props) {
                     <button onClick={handleSave}
                         style={{
                             display: 'flex', alignItems: 'center', gap: 4, padding: '4px 9px', borderRadius: 7, cursor: 'pointer', fontSize: 11,
-                            background: saved ? 'rgba(255,255,255,0.04)' : '#3BA4F718', border: `1px solid ${saved ? 'rgba(255,255,255,0.06)' : '#3BA4F735'}`,
-                            color: saved ? '#3d5a70' : '#3BA4F7', transition: 'all 0.2s'
+                            background: saved ? 'rgba(255,255,255,0.04)' : '#a855f718', border: `1px solid ${saved ? 'rgba(255,255,255,0.06)' : '#a855f735'}`,
+                            color: saved ? '#3d5a70' : '#a855f7', transition: 'all 0.2s'
                         }}>
                         <Save size={10} />
                         {saved ? 'Saved' : 'Save'}
@@ -74,7 +74,7 @@ Use this as your daily brain dump. What did you learn? What will you do tomorrow
                     borderRadius: 10, padding: '12px', color: '#e2f4ff', fontSize: 13, lineHeight: 1.7,
                     fontFamily: 'Inter, system-ui, sans-serif', outline: 'none', transition: 'border-color 0.2s'
                 }}
-                onFocus={e => { e.target.style.borderColor = '#3BA4F7'; e.target.style.background = '#3BA4F708'; }}
+                onFocus={e => { e.target.style.borderColor = '#a855f7'; e.target.style.background = '#a855f708'; }}
                 onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.06)'; e.target.style.background = 'rgba(255,255,255,0.02)'; }}
             />
 

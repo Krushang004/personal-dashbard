@@ -15,7 +15,7 @@ interface Props {
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { value: number }[] }) => {
     if (active && payload && payload.length) {
         return (
-            <div style={{ background: 'var(--color-bg-card)', border: '1px solid #3BA4F720', borderRadius: 8, padding: '6px 10px' }}>
+            <div style={{ background: '#0d1e30', border: '1px solid #c084fc20', borderRadius: 8, padding: '6px 10px' }}>
                 <p style={{ color: '#e2f4ff', fontSize: 12, fontWeight: 600 }}>{payload[0].value}h</p>
             </div>
         );
@@ -65,18 +65,18 @@ export default function CodingCard({ today, weekData, onUpdate }: Props) {
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div style={{ background: '#3BA4F720', borderRadius: 8, padding: '6px' }}>
-                        <Code2 size={15} style={{ color: '#3BA4F7' }} />
+                    <div style={{ background: '#a855f720', borderRadius: 8, padding: '6px' }}>
+                        <Code2 size={15} style={{ color: '#a855f7' }} />
                     </div>
                     <span className="section-title">Coding / Work</span>
                 </div>
-                <span className="badge" style={{ background: '#3BA4F720', color: '#3BA4F7' }}>
+                <span className="badge" style={{ background: '#a855f720', color: '#a855f7' }}>
                     {pct.toFixed(0)}% goal
                 </span>
             </div>
 
             <div className="flex items-end gap-2">
-                <span className="value-lg" style={{ color: today.coding >= target ? '#4ADE80' : '#3BA4F7' }}>
+                <span className="value-lg" style={{ color: today.coding >= target ? '#34d399' : '#a855f7' }}>
                     {today.coding.toFixed(1)}
                 </span>
                 <span style={{ color: '#7a9ab5', marginBottom: 4 }}>/ {target}h goal</span>
@@ -85,14 +85,14 @@ export default function CodingCard({ today, weekData, onUpdate }: Props) {
             {/* Timer */}
             <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 10, padding: '10px 12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span style={{ fontFamily: 'monospace', fontSize: 20, fontWeight: 700, color: running ? '#2DD4BF' : '#E6EDF3', letterSpacing: 1 }}
+                    <span style={{ fontFamily: 'monospace', fontSize: 20, fontWeight: 700, color: running ? '#c084fc' : '#e2f4ff', letterSpacing: 1 }}
                         className={running ? 'timer-active' : ''}>
                         {formatTime(elapsed)}
                     </span>
                     <div style={{ display: 'flex', gap: 6 }}>
                         <button
                             onClick={() => setRunning(!running)}
-                            style={{ background: running ? '#3BA4F720' : '#3BA4F7', borderRadius: 7, padding: '5px 10px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, color: running ? '#2DD4BF' : 'white', fontSize: 12 }}>
+                            style={{ background: running ? '#a855f720' : '#a855f7', borderRadius: 7, padding: '5px 10px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, color: running ? '#c084fc' : 'white', fontSize: 12 }}>
                             {running ? <Pause size={12} /> : <Play size={12} />}
                             {running ? 'Pause' : 'Start'}
                         </button>
@@ -126,7 +126,7 @@ export default function CodingCard({ today, weekData, onUpdate }: Props) {
                         <Tooltip content={<CustomTooltip />} cursor={false} />
                         <Bar dataKey="hours" radius={[3, 3, 0, 0]}>
                             {chartData.map((entry, index) => (
-                                <Cell key={index} fill={index === 6 ? '#3BA4F7' : '#3BA4F730'} />
+                                <Cell key={index} fill={index === 6 ? '#a855f7' : '#a855f730'} />
                             ))}
                         </Bar>
                     </BarChart>

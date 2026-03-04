@@ -22,11 +22,10 @@ export default function SetupModal({ onComplete }: Props) {
                 background: 'rgba(8,4,20,0.85)', backdropFilter: 'blur(24px)'
             }}>
             <div className="card p-8 sm:p-10 w-full max-w-md animate-fade-in glow-accent text-center"
-                style={{ border: '1px solid rgba(59,164,247,0.3)' }}>
-                <div className="absolute inset-0 rounded-2xl animate-pulse"
-                    style={{ background: 'rgba(59,164,247,0.15)', color: '#2DD4BF' }}></div>
-                <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full mb-6 relative z-10"
-                    style={{ background: 'rgba(59,164,247,0.15)', color: '#2DD4BF' }}>
+                style={{ border: '1px solid rgba(168,85,247,0.3)' }}>
+
+                <div className="mx-auto w-16 h-16 flex items-center justify-center rounded-full mb-6"
+                    style={{ background: 'rgba(168,85,247,0.15)', color: '#c084fc' }}>
                     <Sparkles size={32} />
                 </div>
 
@@ -39,7 +38,7 @@ export default function SetupModal({ onComplete }: Props) {
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={20} style={{ color: '#3BA4F7' }} />
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={20} style={{ color: '#a855f7' }} />
                         <input
                             autoFocus
                             type="text"
@@ -50,7 +49,7 @@ export default function SetupModal({ onComplete }: Props) {
                             style={{
                                 padding: '14px 16px 14px 44px',
                                 fontSize: 16,
-                                borderColor: 'rgba(59,164,247,0.4)',
+                                borderColor: 'rgba(168,85,247,0.4)',
                                 background: 'rgba(8,4,20,0.5)'
                             }}
                         />

@@ -61,7 +61,7 @@ export default function StudyCard({ today, weekData, onUpdate }: Props) {
             </div>
 
             <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${pct}%`, background: 'linear-gradient(135deg, #1C3D8C, #0F6CBD, #2DD4BF)' }} />
+                <div className="progress-fill" style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #4ade80, #c084fc)' }} />
             </div>
 
             <div style={{ fontSize: 11, color: '#8b8a96' }}>

@@ -39,7 +39,7 @@ export default function Header({ today, userName, onRefresh }: Props) {
             <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <h1 style={{ fontSize: 22, fontWeight: 700, color: '#e2f4ff', letterSpacing: '-0.3px' }}>
-                        {getGreeting()}, <span style={{ color: 'var(--color-accent, #3BA4F7)' }}>{userName}</span> 👋
+                        {getGreeting()}, <span style={{ color: 'var(--color-accent, #a855f7)' }}>{userName}</span> 👋
                     </h1>
                     {moodEntry && (
                         <span title={`Mood: ${moodEntry.label}`} style={{ fontSize: 18, cursor: 'default' }}>{moodEntry.emoji}</span>
@@ -47,7 +47,7 @@ export default function Header({ today, userName, onRefresh }: Props) {
                 </div>
                 <div style={{ color: '#7a9ab5', fontSize: 13, marginTop: 3, fontWeight: 400 }}>
                     {format(now, 'EEEE, MMMM d, yyyy')} &nbsp;·&nbsp;
-                    <span style={{ fontFamily: 'monospace', color: 'var(--color-accent-light, #2DD4BF)', fontWeight: 600 }}>
+                    <span style={{ fontFamily: 'monospace', color: 'var(--color-accent-light, #c084fc)', fontWeight: 600 }}>
                         {format(now, 'HH:mm:ss')}
                     </span>
                 </div>
@@ -65,13 +65,7 @@ export default function Header({ today, userName, onRefresh }: Props) {
             <div className="flex items-center gap-4 sm:gap-6 w-full md:w-auto order-2 md:order-3 justify-between md:justify-end">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <svg width={60} height={60} viewBox="0 0 60 60" style={{ transform: 'rotate(-90deg)' }}>
-                        <defs>
-                            <linearGradient id="productivityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#1C3D8C" />
-                                <stop offset="100%" stopColor="#0F6CBD" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx={30} cy={30} r={radius} fill="none" stroke="url(#productivityGradient)" strokeWidth={4} />
+                        <circle cx={30} cy={30} r={radius} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={4} />
                         <circle cx={30} cy={30} r={radius} fill="none" stroke={scoreColor} strokeWidth={4}
                             strokeDasharray={`${dash} ${circ}`} strokeLinecap="round"
                             style={{ transition: 'stroke-dasharray 0.5s cubic-bezier(0.4,0,0.2,1)' }} />
@@ -82,9 +76,9 @@ export default function Header({ today, userName, onRefresh }: Props) {
                     </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: 'var(--color-accent-dim)', border: '1px solid rgba(59,164,247,0.3)', borderRadius: 8 }}>
-                    <Zap size={12} style={{ color: 'var(--color-accent, #3BA4F7)' }} />
-                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-accent, #3BA4F7)' }}>Productivity Score</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '6px 12px', background: 'var(--color-accent-dim)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: 8 }}>
+                    <Zap size={12} style={{ color: 'var(--color-accent, #a855f7)' }} />
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-accent, #a855f7)' }}>Productivity Score</span>
                 </div>
             </div>
         </div>
