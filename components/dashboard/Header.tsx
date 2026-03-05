@@ -41,7 +41,7 @@ export default function Header({ today, userName }: Props) {
     const dash = (score / 100) * circ;
 
     return (
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4 md:px-8 py-5 sticky top-0 z-20"
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 px-4 md:px-8 py-5 md:sticky md:top-0 z-20"
             style={{
                 borderBottom: '1px solid #253745',
                 background: 'rgba(6, 20, 27, 0.88)',

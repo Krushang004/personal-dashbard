@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">personal-life-dashboard</string>
+    <string name="title_activity_main">personal-life-dashboard</string>
+    <string name="package_name">com.krushang.dashboard</string>
+    <string name="custom_url_scheme">com.krushang.dashboard</string>
+</resources>
