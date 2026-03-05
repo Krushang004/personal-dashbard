@@ -15,9 +15,9 @@ interface Props {
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { name: string; value: number }[] }) => {
     if (active && payload && payload.length) {
         return (
-            <div style={{ background: '#1c1c26', border: '1px solid #ffffff1a', borderRadius: 8, padding: '6px 10px' }}>
+            <div style={{ background: '#181818', border: '1px solid #33333350', borderRadius: 8, padding: '6px 10px' }}>
                 {payload.map((p, i) => (
-                    <p key={i} style={{ color: p.name === 'earned' ? '#4ade80' : '#f87171', fontSize: 11, fontWeight: 600 }}>
+                    <p key={i} style={{ color: p.name === 'earned' ? '#f0f0f0' : '#888888', fontSize: 11, fontWeight: 600 }}>
                         {p.name}: ₹{p.value}
                     </p>
                 ))}
@@ -53,11 +53,11 @@ export default function MoneyCard({ today, weekData, onUpdate }: Props) {
     return (
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center gap-2">
-                <div style={{ background: '#4ade8020', borderRadius: 8, padding: '6px' }}>
-                    <DollarSign size={15} style={{ color: '#4ade80' }} />
+                <div style={{ background: '#88888820', borderRadius: 8, padding: '6px' }}>
+                    <DollarSign size={15} style={{ color: '#aaaaaa' }} />
                 </div>
                 <span className="section-title">Money</span>
-                <span className="badge ml-auto" style={{ background: positive ? '#4ade8020' : '#f8717120', color: positive ? '#4ade80' : '#f87171' }}>
+                <span className="badge ml-auto" style={{ background: positive ? '#f0f0f020' : '#88888820', color: positive ? '#f0f0f0' : '#888888' }}>
                     {positive ? <TrendingUp size={10} /> : <TrendingDown size={10} />}
                     {formatCurrency(Math.abs(balance))}
                 </span>
@@ -65,13 +65,13 @@ export default function MoneyCard({ today, weekData, onUpdate }: Props) {
 
             {/* Summary row */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-                <div style={{ background: '#4ade8010', border: '1px solid #4ade8020', borderRadius: 10, padding: '10px 12px' }}>
-                    <div style={{ color: '#4b4a56', fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Earned</div>
-                    <div style={{ color: '#4ade80', fontSize: 18, fontWeight: 700, marginTop: 2 }}>{formatCurrency(today.moneyEarned)}</div>
+                <div style={{ background: '#f0f0f010', border: '1px solid #f0f0f020', borderRadius: 10, padding: '10px 12px' }}>
+                    <div style={{ color: '#555555', fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Earned</div>
+                    <div style={{ color: '#f0f0f0', fontSize: 18, fontWeight: 700, marginTop: 2 }}>{formatCurrency(today.moneyEarned)}</div>
                 </div>
-                <div style={{ background: '#f8717110', border: '1px solid #f8717120', borderRadius: 10, padding: '10px 12px' }}>
-                    <div style={{ color: '#4b4a56', fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Spent</div>
-                    <div style={{ color: '#f87171', fontSize: 18, fontWeight: 700, marginTop: 2 }}>{formatCurrency(today.moneySpent)}</div>
+                <div style={{ background: '#88888810', border: '1px solid #88888820', borderRadius: 10, padding: '10px 12px' }}>
+                    <div style={{ color: '#555555', fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Spent</div>
+                    <div style={{ color: '#888888', fontSize: 18, fontWeight: 700, marginTop: 2 }}>{formatCurrency(today.moneySpent)}</div>
                 </div>
             </div>
 
@@ -79,12 +79,12 @@ export default function MoneyCard({ today, weekData, onUpdate }: Props) {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     <input className="input-field" type="number" placeholder="Earned (₹)" value={earned}
                         onChange={e => setEarned(e.target.value)} onKeyDown={e => e.key === 'Enter' && saveEarned()} min={0} />
-                    <button className="btn-primary" onClick={saveEarned} style={{ background: '#4ade80', color: '#0a0a0f' }}>Set earned</button>
+                    <button className="btn-primary" onClick={saveEarned} style={{ background: '#f0f0f0', color: '#0a0a0a' }}>Set earned</button>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     <input className="input-field" type="number" placeholder="Spent (₹)" value={spent}
                         onChange={e => setSpent(e.target.value)} onKeyDown={e => e.key === 'Enter' && saveSpent()} min={0} />
-                    <button className="btn-primary" onClick={saveSpent} style={{ background: '#f87171', color: 'white' }}>Set spent</button>
+                    <button className="btn-primary" onClick={saveSpent} style={{ background: '#888888', color: 'white' }}>Set spent</button>
                 </div>
             </div>
 
@@ -93,18 +93,18 @@ export default function MoneyCard({ today, weekData, onUpdate }: Props) {
                     <AreaChart data={chartData}>
                         <defs>
                             <linearGradient id="colorEarned" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#4ade80" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#4ade80" stopOpacity={0} />
+                                <stop offset="5%" stopColor="#f0f0f0" stopOpacity={0.3} />
+                                <stop offset="95%" stopColor="#f0f0f0" stopOpacity={0} />
                             </linearGradient>
                             <linearGradient id="colorSpent" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#f87171" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#f87171" stopOpacity={0} />
+                                <stop offset="5%" stopColor="#888888" stopOpacity={0.3} />
+                                <stop offset="95%" stopColor="#888888" stopOpacity={0} />
                             </linearGradient>
                         </defs>
-                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#4b4a56' }} axisLine={false} tickLine={false} />
+                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#555555' }} axisLine={false} tickLine={false} />
                         <Tooltip content={<CustomTooltip />} cursor={false} />
-                        <Area type="monotone" dataKey="earned" stroke="#4ade80" strokeWidth={1.5} fill="url(#colorEarned)" name="earned" />
-                        <Area type="monotone" dataKey="spent" stroke="#f87171" strokeWidth={1.5} fill="url(#colorSpent)" name="spent" />
+                        <Area type="monotone" dataKey="earned" stroke="#f0f0f0" strokeWidth={1.5} fill="url(#colorEarned)" name="earned" />
+                        <Area type="monotone" dataKey="spent" stroke="#888888" strokeWidth={1.5} fill="url(#colorSpent)" name="spent" />
                     </AreaChart>
                 </ResponsiveContainer>
             </div>

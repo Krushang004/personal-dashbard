@@ -35,12 +35,12 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div style={{ background: '#f472b620', borderRadius: 8, padding: '6px' }}>
-                        <CheckSquare size={15} style={{ color: '#f472b6' }} />
+                    <div style={{ background: '#88888820', borderRadius: 8, padding: '6px' }}>
+                        <CheckSquare size={15} style={{ color: '#aaaaaa' }} />
                     </div>
                     <span className="section-title">Habits</span>
                 </div>
-                <span className="badge" style={{ background: '#f472b620', color: '#f472b6' }}>
+                <span className="badge" style={{ background: '#88888820', color: '#f0f0f0' }}>
                     {done}/{total} today
                 </span>
             </div>
@@ -48,7 +48,7 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
             {/* Progress */}
             <div className="progress-bar">
                 <div className="progress-fill"
-                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(90deg, #f472b6, #3BA4F7)' }} />
+                    style={{ width: `${(done / total) * 100}%`, background: 'linear-gradient(90deg, #333333, #888888, #f0f0f0)' }} />
             </div>
 
             {/* Habit list */}
@@ -61,19 +61,19 @@ export default function HabitsCard({ today, weekData, onUpdate }: Props) {
                             style={{
                                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                                 padding: '8px 10px', borderRadius: 8, cursor: 'pointer', width: '100%', transition: 'all 0.15s',
-                                background: checked ? '#f472b610' : 'rgba(255,255,255,0.02)',
-                                border: `1px solid ${checked ? '#f472b620' : 'rgba(255,255,255,0.05)'}`,
+                                background: checked ? '#88888818' : 'rgba(30,30,30,0.8)',
+                                border: `1px solid ${checked ? '#88888830' : 'rgba(255,255,255,0.06)'}`,
                             }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                                 {checked
-                                    ? <CheckSquare size={15} style={{ color: '#f472b6' }} />
-                                    : <Square size={15} style={{ color: '#3d5a70' }} />}
-                                <span style={{ fontSize: 13, color: checked ? '#e2f4ff' : '#7a9ab5', fontWeight: checked ? 500 : 400 }}>
+                                    ? <CheckSquare size={15} style={{ color: '#aaaaaa' }} />
+                                    : <Square size={15} style={{ color: '#555555' }} />}
+                                <span style={{ fontSize: 13, color: checked ? '#f0f0f0' : '#888888', fontWeight: checked ? 500 : 400 }}>
                                     {habit}
                                 </span>
                             </div>
                             {streak > 1 && (
-                                <span style={{ display: 'flex', alignItems: 'center', gap: 3, fontSize: 11, color: '#fb923c' }}>
+                                <span style={{ display: 'flex', alignItems: 'center', gap: 3, fontSize: 11, color: '#aaaaaa' }}>
                                     <Flame size={10} /> {streak}
                                 </span>
                             )}

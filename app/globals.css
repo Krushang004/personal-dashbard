@@ -1,43 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  /* Backgrounds — modern dark health dashboard */
-  --color-bg-primary: #0B0F14;
-  --color-bg-secondary: #0E1319;
-  --color-bg-card: #141A21;
-  --color-bg-card-hover: #1A222B;
+  /* ── Grayscale Palette ── */
+
+  /* Backgrounds */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-card: #181818;
+  --color-bg-card-hover: #222222;
 
   /* Borders */
-  --color-border: #222A35;
-  --color-border-active: #3BA4F780;
+  --color-border: #2e2e2e;
+  --color-border-active: #666666;
 
-  /* Accent — Primary (Blue) */
-  --color-accent: #3BA4F7;
-  --color-accent-light: #60B7F8;
-  --color-accent-dim: #3BA4F71A;
+  /* Accent — Mid Gray */
+  --color-accent: #888888;
+  --color-accent-light: #aaaaaa;
+  --color-accent-dim: #88888818;
 
-  /* Accent — Secondary (Teal) */
-  --color-accent-secondary: #2DD4BF;
-  --color-accent-sec-dim: #2DD4BF1A;
+  /* Accent — Secondary */
+  --color-accent-secondary: #aaaaaa;
+  --color-accent-sec-dim: #aaaaaa18;
 
-  /* Semantic colors */
+  /* Semantic colors — kept so data still reads clearly */
   --color-green: #4ADE80;
   --color-green-dim: #4ADE801A;
   --color-orange: #fb923c;
   --color-orange-dim: #fb923c18;
-  --color-blue: #3BA4F7;
-  --color-blue-dim: #3BA4F71A;
-  --color-pink: #f472b6;
-  --color-pink-dim: #f472b618;
+  --color-blue: #aaaaaa;
+  --color-blue-dim: #aaaaaa1A;
+  --color-pink: #cccccc;
+  --color-pink-dim: #cccccc18;
   --color-yellow: #FACC15;
   --color-yellow-dim: #FACC151A;
   --color-red: #FB7185;
   --color-red-dim: #FB71851A;
 
   /* Text */
-  --color-text-primary: #E6EDF3;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748B;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #999999;
+  --color-text-muted: #555555;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -77,12 +79,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #222A35;
+    background: #2e2e2e;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #555555;
   }
 
   input,
@@ -113,9 +115,9 @@
   .card:hover {
     border-color: var(--color-border-active);
     background: var(--color-bg-card-hover);
-    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 164, 247, 0.1);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(136, 136, 136, 0.15);
     transform: translateY(-2px);
-    filter: brightness(1.02);
+    filter: brightness(1.05);
   }
 
   .input-field {
@@ -131,8 +133,7 @@
 
   .input-field:focus {
     border-color: var(--color-accent);
-    background: rgba(59, 164, 247, 0.08);
-    /* 3BA4F7 */
+    background: rgba(136, 136, 136, 0.08);
   }
 
   .btn-primary {
@@ -207,8 +208,7 @@
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(59, 164, 247, 0.35);
-    /* 3BA4F7 glow */
+    box-shadow: 0 0 20px rgba(136, 136, 136, 0.3);
   }
 
   .badge {
@@ -231,8 +231,7 @@
 }
 
 .recharts-text {
-  fill: #94A3B8 !important;
-  /* Text Secondary */
+  fill: #555555 !important;
   font-size: 11px !important;
   font-family: var(--font-sans) !important;
 }
@@ -286,9 +285,9 @@
 
 /* Scrollbar track tint */
 ::-webkit-scrollbar-thumb {
-  background: #222A35;
+  background: #2e2e2e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #555555;
 }
