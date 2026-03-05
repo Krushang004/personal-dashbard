@@ -15,8 +15,8 @@ interface Props {
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { value: number }[] }) => {
     if (active && payload && payload.length) {
         return (
-            <div style={{ background: '#181818', border: '1px solid #33333350', borderRadius: 8, padding: '6px 10px' }}>
-                <p style={{ color: '#f0f0f0', fontSize: 12, fontWeight: 600 }}>{payload[0].value}h</p>
+            <div style={{ background: '#11212D', border: '1px solid #4A5C6A40', borderRadius: 8, padding: '6px 10px' }}>
+                <p style={{ color: '#CCD0CF', fontSize: 12, fontWeight: 600 }}>{payload[0].value}h</p>
             </div>
         );
     }
@@ -43,28 +43,28 @@ export default function StudyCard({ today, weekData, onUpdate }: Props) {
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div style={{ background: '#88888820', borderRadius: 8, padding: '6px' }}>
-                        <BookOpen size={15} style={{ color: '#888888' }} />
+                    <div style={{ background: 'rgba(74,92,106,0.3)', borderRadius: 8, padding: '6px' }}>
+                        <BookOpen size={15} style={{ color: '#9BA8AB' }} />
                     </div>
                     <span className="section-title">Study</span>
                 </div>
-                <span className="badge" style={{ background: '#88888820', color: '#f0f0f0' }}>
+                <span className="badge" style={{ background: 'rgba(74,92,106,0.25)', color: '#CCD0CF' }}>
                     {weekTotal.toFixed(1)}h week
                 </span>
             </div>
 
             <div className="flex items-end gap-2">
-                <span className="value-lg" style={{ color: today.study >= target ? '#f0f0f0' : today.study >= 2 ? '#aaaaaa' : '#f0f0f0' }}>
+                <span className="value-lg" style={{ color: today.study >= target ? '#CCD0CF' : today.study >= 2 ? '#9BA8AB' : '#CCD0CF' }}>
                     {today.study}
                 </span>
-                <span style={{ color: '#555555', marginBottom: 4 }}>/ {target}h goal</span>
+                <span style={{ color: '#4A5C6A', marginBottom: 4 }}>/ {target}h goal</span>
             </div>
 
             <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #333333, #888888, #f0f0f0)' }} />
+                <div className="progress-fill" style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #253745, #4A5C6A, #9BA8AB)' }} />
             </div>
 
-            <div style={{ fontSize: 11, color: '#555555' }}>
+            <div style={{ fontSize: 11, color: '#4A5C6A' }}>
                 {pct >= 100 ? '✅ Goal reached!' : `${(target - today.study).toFixed(1)}h remaining`}
             </div>
 
@@ -84,11 +84,11 @@ export default function StudyCard({ today, weekData, onUpdate }: Props) {
             <div style={{ height: 65 }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData} barSize={10}>
-                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#555555' }} axisLine={false} tickLine={false} />
+                        <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#4A5C6A' }} axisLine={false} tickLine={false} />
                         <Tooltip content={<CustomTooltip />} cursor={false} />
                         <Bar dataKey="hours" radius={[3, 3, 0, 0]}>
                             {chartData.map((entry, index) => (
-                                <Cell key={index} fill={index === 6 ? '#888888' : '#44444440'} />
+                                <Cell key={index} fill={index === 6 ? '#9BA8AB' : '#4A5C6A25'} />
                             ))}
                         </Bar>
                     </BarChart>

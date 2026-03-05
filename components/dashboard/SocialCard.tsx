@@ -19,10 +19,10 @@ interface StatField {
 }
 
 const FIELDS: StatField[] = [
-    { key: 'ytViews', label: 'YT Views', icon: <Youtube size={13} />, color: '#aaaaaa', placeholder: '0', suffix: 'views' },
-    { key: 'ytSubscribers', label: 'YT Subs', icon: <Users size={13} />, color: '#cccccc', placeholder: '0', suffix: 'subs' },
-    { key: 'igViews', label: 'IG Views', icon: <Instagram size={13} />, color: '#888888', placeholder: '0', suffix: 'views' },
-    { key: 'followers', label: 'IG Followers', icon: <TrendingUp size={13} />, color: '#f0f0f0', placeholder: '0', suffix: 'followers' },
+    { key: 'ytViews', label: 'YT Views', icon: <Youtube size={13} />, color: '#9BA8AB', placeholder: '0', suffix: 'views' },
+    { key: 'ytSubscribers', label: 'YT Subs', icon: <Users size={13} />, color: '#CCD0CF', placeholder: '0', suffix: 'subs' },
+    { key: 'igViews', label: 'IG Views', icon: <Instagram size={13} />, color: '#9BA8AB', placeholder: '0', suffix: 'views' },
+    { key: 'followers', label: 'IG Followers', icon: <TrendingUp size={13} />, color: '#CCD0CF', placeholder: '0', suffix: 'followers' },
 ];
 
 export default function SocialCard({ today, onUpdate }: Props) {
@@ -46,8 +46,8 @@ export default function SocialCard({ today, onUpdate }: Props) {
     return (
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center gap-2">
-                <div style={{ background: '#88888820', borderRadius: 8, padding: '6px' }}>
-                    <BarChart2 size={15} style={{ color: '#aaaaaa' }} />
+                <div style={{ background: 'rgba(74,92,106,0.3)', borderRadius: 8, padding: '6px' }}>
+                    <BarChart2 size={15} style={{ color: '#9BA8AB' }} />
                 </div>
                 <span className="section-title">Social Metrics</span>
             </div>
@@ -57,10 +57,10 @@ export default function SocialCard({ today, onUpdate }: Props) {
                     const current = today[field.key] as number || 0;
                     return (
                         <div key={field.key}
-                            style={{ background: field.color + '08', border: `1px solid ${field.color}20`, borderRadius: 10, padding: '10px 12px' }}>
+                            style={{ background: 'rgba(17,33,45,0.8)', border: `1px solid #4A5C6A40`, borderRadius: 10, padding: '10px 12px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 6 }}>
                                 <span style={{ color: field.color }}>{field.icon}</span>
-                                <span style={{ color: '#555555', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                                <span style={{ color: '#4A5C6A', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                                     {field.label}
                                 </span>
                             </div>

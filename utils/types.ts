@@ -67,10 +67,10 @@ export function calcProductivityScore(data: DayData): number {
 }
 
 export function getScoreColor(score: number): string {
-    if (score >= 80) return '#f0f0f0';
-    if (score >= 60) return '#aaaaaa';
-    if (score >= 40) return '#888888';
-    return '#555555';
+    if (score >= 80) return '#CCD0CF';
+    if (score >= 60) return '#9BA8AB';
+    if (score >= 40) return '#4A5C6A';
+    return '#2E4252';
 }
 
 export function getScoreLabel(score: number): string {

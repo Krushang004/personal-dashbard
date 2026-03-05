@@ -38,13 +38,13 @@ export default function GymCard({ today: t, weekData: wd, onUpdate }: Props) {
         <div className="card p-5 flex flex-col gap-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div style={{ background: '#fb923c20', borderRadius: 8, padding: '6px' }}>
-                        <Dumbbell size={15} style={{ color: '#fb923c' }} />
+                    <div style={{ background: 'rgba(74,92,106,0.3)', borderRadius: 8, padding: '6px' }}>
+                        <Dumbbell size={15} style={{ color: '#9BA8AB' }} />
                     </div>
                     <span className="section-title">Gym / Health</span>
                 </div>
                 {streak > 0 && (
-                    <span className="badge" style={{ background: '#fb923c20', color: '#fb923c' }}>
+                    <span className="badge" style={{ background: 'rgba(74,92,106,0.25)', color: '#CCD0CF' }}>
                         <Flame size={10} /> {streak} streak
                     </span>
                 )}
@@ -55,31 +55,32 @@ export default function GymCard({ today: t, weekData: wd, onUpdate }: Props) {
                 onClick={toggleWorkout}
                 style={{
                     display: 'flex', alignItems: 'center', gap: 10, padding: '12px 14px',
-                    background: t.workout ? '#fb923c12' : 'rgba(30,30,30,0.9)',
-                    border: `1px solid ${t.workout ? '#fb923c40' : 'rgba(255,255,255,0.06)'}`,
+                    background: t.workout ? 'rgba(74,92,106,0.3)' : '#11212D',
+                    border: `1px solid ${t.workout ? '#4A5C6A' : 'rgba(74,92,106,0.2)'}`,
                     borderRadius: 10, cursor: 'pointer', width: '100%', transition: 'all 0.2s'
                 }}>
                 {t.workout
-                    ? <CheckCircle2 size={18} style={{ color: '#fb923c' }} />
-                    : <Circle size={18} style={{ color: '#555555' }} />}
+                    ? <CheckCircle2 size={18} style={{ color: '#CCD0CF' }} />
+                    : <Circle size={18} style={{ color: '#4A5C6A' }} />}
                 <div style={{ textAlign: 'left' }}>
-                    <div style={{ color: t.workout ? '#fb923c' : '#f0f0f0', fontWeight: 600, fontSize: 13 }}>
-                        {t.workout ? 'Workout done! 💪' : 'Mark today\'s workout'}
+                    <div style={{ color: t.workout ? '#CCD0CF' : '#9BA8AB', fontWeight: 600, fontSize: 13 }}>
+                        {t.workout ? 'Workout done! 💪' : "Mark today's workout"}
                     </div>
-                    <div style={{ color: '#555555', fontSize: 11 }}>{weekWorkouts}/7 workouts this week</div>
+                    <div style={{ color: '#4A5C6A', fontSize: 11 }}>{weekWorkouts}/7 workouts this week</div>
                 </div>
             </button>
 
             {/* Weekly dots */}
             <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-                <span style={{ color: '#555555', fontSize: 11, width: 60 }}>This week</span>
+                <span style={{ color: '#4A5C6A', fontSize: 11, width: 60 }}>This week</span>
                 <div style={{ display: 'flex', gap: 4 }}>
                     {wd.map((d, i) => (
                         <div key={i} title={keys[i]} style={{
                             width: 20, height: 20, borderRadius: 5,
-                            background: d.workout ? '#f0f0f0' : 'rgba(255,255,255,0.06)',
+                            background: d.workout ? '#9BA8AB' : '#11212D',
                             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9,
-                            color: d.workout ? 'white' : '#555555'
+                            border: `1px solid ${d.workout ? '#4A5C6A' : 'rgba(74,92,106,0.2)'}`,
+                            color: d.workout ? '#06141B' : '#4A5C6A'
                         }}>
                             {['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}
                         </div>
@@ -93,9 +94,9 @@ export default function GymCard({ today: t, weekData: wd, onUpdate }: Props) {
                     <button key={type} onClick={() => setNotes(type)}
                         style={{
                             padding: '3px 9px', borderRadius: 6, fontSize: 11, cursor: 'pointer',
-                            background: notes === type ? '#88888820' : 'rgba(30,30,30,0.8)',
-                            border: `1px solid ${notes === type ? '#88888840' : 'rgba(255,255,255,0.06)'}`,
-                            color: notes === type ? '#f0f0f0' : '#888888', transition: 'all 0.15s'
+                            background: notes === type ? 'rgba(74,92,106,0.3)' : '#11212D',
+                            border: `1px solid ${notes === type ? '#4A5C6A' : 'rgba(74,92,106,0.2)'}`,
+                            color: notes === type ? '#CCD0CF' : '#4A5C6A', transition: 'all 0.15s'
                         }}>
                         {type}
                     </button>
